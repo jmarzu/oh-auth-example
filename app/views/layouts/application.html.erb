@@ -11,7 +11,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= @current_user.inspect %>
   <div class="container">
+    <%= link_to('login with GitHub', '/auth/github') %>
+      
     <%= yield %>
   </div>
 </body>

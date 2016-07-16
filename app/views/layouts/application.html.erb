@@ -14,7 +14,7 @@
   <%= @current_user.inspect %>
   <div class="container">
     <%= link_to('login with GitHub', '/auth/github') %>
-      
+    <%= link_to('logout', '/auth/logout') %>
     <%= yield %>
   </div>
 </body>

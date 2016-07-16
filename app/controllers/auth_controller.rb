@@ -1,6 +1,6 @@
 class AuthController < ApplicationController
   def callback
-    proivider_user = request.env['omniauth.auth']
+    provider_user = request.env['omniauth.auth']
     user = User.find_or_create_by(provider_id: provider_user['uid'], 
       provider_name: provider_user['provider']) do |u|
 
@@ -10,7 +10,7 @@ class AuthController < ApplicationController
       u.email = provider_user['info']['image']
     end
 
-    session[:user_id] = user.user_id
+    session[:user_id] = user.id
     redirect_to root_path
   end
 
